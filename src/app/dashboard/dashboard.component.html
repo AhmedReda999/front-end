@@ -1,0 +1,14 @@
+<section id="dashboard">
+    <h2>Admin Dashboard</h2>
+
+    <div *ngIf="componentData">
+        <h3>Edit Content</h3>
+        <form (ngSubmit)="updateContent()">
+            <textarea [(ngModel)]="componentData.text" name="content"></textarea>
+            <button type="submit" class="btn">Update</button>
+            <button type="button" class="btn" (click)="deleteContent()">Delete</button>
+        </form>
+    </div>
+
+    <div *ngIf="updateMessage" class="success">{{ updateMessage }}</div>
+</section>
